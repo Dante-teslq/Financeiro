@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:body>
+	<h:panelGrid columns="2">
+	
+		<!--  Cria o título do painel,nesse cara como "Dados para cadastro" -->
+		
+		<f:facet name="header">
+			<h:outputText value="Dados para cadastro" />
+		</f:facet>
+		
+		<!-- Cria a primeira caixa de entrada nomeada como "Nome-->
+		
+		<h:outputText value="Nome:" />
+		<h:inputText size="20" />
+		
+		<!-- Cria a segunda caixa de entrada nomeada como "E-mail" -->
+		
+		<h:outputText value="E-mail:" />
+		<h:inputText size="40" />
+		
+		<!-- Cria a terceira caixa de entra nomeada como "Senha" e ele tem um tamanho máximo de 20 caracteres -->
+		
+		<h:outputText value="Senha:" />
+		<h:inputSecret size="20" />
+		
+		<h:outputText />
+		
+		<!-- Cria um botão com o valor de "Cadastrar" -->
+		
+		<h:commandButton value="Cadastrar" />
+		
+	</h:panelGrid>
+	
+</h:body>
+</html>

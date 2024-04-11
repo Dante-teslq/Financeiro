@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<body>
+	<h:panelGrid columns="2">
+		<f:facet name="header">
+			<h:outputText value="Dados de Cadastro" />
+		</f:facet>
+
+		<h:outputText value="Nome" />
+		<h:inputText size="30" />
+
+		<h:outputText value="Email" />
+		<h:panelGroup>
+			<h:inputText size="30" />
+			<h:commandButton value="Validar" />
+		</h:panelGroup>
+
+		<h:outputText value="Senha" />
+		<h:inputText size="30" />
+
+		<h:outputText />
+		<h:commandButton value="Cadastrar" />
+	</h:panelGrid>
+</body>
+</html>

@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:f="http://xmlns.jcp.org/jsf/core"
-		xmlns:h="http://xmlns.jcp.org/jsf/html">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
 <h:body>
 	<h:outputLabel value="Time de futebol favorito: " for="timeFutebol" />
 
-<!-- Cria a caixa de escolha de time,nesse caso só se pode escolher u-->
+	<!-- Cria a caixa de escolha de time,nesse caso só se pode escolher u-->
 
 	<h:selectOneMenu value="#{cadastroTorcedorBean.timeFavorito}"
-		id="timeFutebol" >
-		<f:selectItem itemValue="Corinthians" itemLabel = "Timão"/>
-		<f:selectItem itemValue="Palmeiras" itemLabel = "Verdão"/>
-		<f:selectItem itemValue="Santos"/>
-		<f:selectItem itemValue="São Paulo"/>
-		<f:selectItem itemValue="Vasco" itemLabel = "Vascão"/>
+		id="timeFutebol">
+		<f:selectItem itemValue="Corinthians" itemLabel="Timão" />
+		<f:selectItem itemValue="Palmeiras" itemLabel="Verdão" />
+		<f:selectItem itemValue="Santos" />
+		<f:selectItem itemValue="São Paulo" />
+		<f:selectItem itemValue="Vasco" itemLabel="Vascão" />
 		<f:selectItem itemValue="Outro" />
 	</h:selectOneMenu>
-	
-<!-- Cria a entrada de escolha entre o sexo masculio e feminino,sendo só uma 
+
+	<!-- Cria a entrada de escolha entre o sexo masculio e feminino,sendo só uma 
 	escolha também -->
 	<!-- usa-se "layout = "pageDirection ou "lineDirection" para indentificar como voce quer que ela se comporte 
 		(pilhada ou enfileirada)  -->
-		
-	<h:selectOneRadio id="sexo" layout = "pageDirection">
+
+	<h:selectOneRadio id="sexo" layout="pageDirection">
 		<f:selectItem itemValue="M" itemLabel="Masculino" />
 		<f:selectItem itemValue="F" itemLabel="Feminino" />
 	</h:selectOneRadio>
-	
+
 	<!-- Cria a caixa de marcação estilo "li os termos de uso etc",deve criar 
 		no managed bean uma linha de código que atibua valores de acordo com a resposta -->
-	
+
 	<h:selectBooleanCheckbox id="aceite"
-		value="#{cadastroUsuarioBean.termoAceito}"/>
-	<h:outputLabel value="Li e aceito os termos e condições" for="aceite"/>
-	
+		value="#{cadastroUsuarioBean.termoAceito}" />
+	<h:outputLabel value="Li e aceito os termos e condições" for="aceite" />
+
 	<!-- Cria caixas de marcaçao que podem fazer multíplas escolhas,deve-se criar no 
 		managed bean lihas de código estilo array,por se tratar de uma lista -->
 	<!-- usa-se "layout = "pageDirection ou "lineDirection" para indentificar como voce quer que ela se comporte 
 		(pilhada ou enfileirada)  -->
-		
-	<h:selectManyCheckbox id="assuntos" layout = "pageDirection"
+
+	<h:selectManyCheckbox id="assuntos" layout="pageDirection"
 		value="#{cadastroUsuarioBean.assuntosInteresse}">
 		<f:selectItem itemValue="1" itemLabel="Java" />
 		<f:selectItem itemValue="3" itemLabel="Python" />
 		<f:selectItem itemValue="4" itemLabel="Ruby" />
 		<f:selectItem itemValue="4" itemLabel="PHP" />
 		<f:selectItem itemValue="5" itemLabel="Métodos ágeis" />
-	</h:selectManyCheckbox>	
+	</h:selectManyCheckbox>
+
+	<!--  Cria botões,nesse caso cria um botão de "cadastrar", um de "limpar" e um vinculado a uma imagem com o valor de voltar  -->
+
+	<h:commandButton id="cadastrar" value="Cadastrar" type="submit"
+		action="#{cadastroBean.cadastrar}" />
+	<h:commandButton id="limpar" value="Limpar" type="reset" />
+	<h:commandButton id="voltar" value="Voltar" image="/imagens/voltar.png"
+		action="home" />
+
+	<!-- Gera um botão estilo "submit" para fazer a ação de submissão de formulário -->
+
+	<h:commandLink id="cadastrar" value="Cadastrar"
+		action="#{cadastroBean.cadastrar}" />
+	<h:commandLink id="voltar" action="nom">
+		<h:graphicImage value="/imagens/voltar.png" />
+		<h:outputText value="Voltar" />
+	</h:commandLink>
+
+	<!-- Gera um link que funciona como um botão,que ao interagir você é direcionado à página do link  -->
+
+	<h:outputLink value="http://www.algaworks.com" target="_blank">
+		<f:param name="codigo" value="931" />
+		<f:param name="grupo" value="Java" />
+		<h:graphicImage library="Financeiro" name="logo.png" />
+	</h:outputLink>
+	
 </h:body>
 </html>

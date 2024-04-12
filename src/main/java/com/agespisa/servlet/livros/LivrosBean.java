@@ -7,30 +7,29 @@ import javax.faces.bean.ViewScoped;
 
 @ManagedBean
 @ViewScoped
-public class LivrosBean{
-	
+public class LivrosBean {
 	private List<Livro> livros;
-	
+	private Livro novoLivro;
+
 	public LivrosBean() {
 		this.livros = new ArrayList<>();
-		this.livros.add(new Livro("Java e Orientação a Objetos",
-		"Thiago Faria"));
-		this.livros.add(new Livro("JPA 2 e Hibernate", "Thiago Faria"));
-		this.livros.add(new Livro("JavaServer Faces", "Thiago Faria"));
-		this.livros.add(new Livro("Test Driven Development", "Kent Beck"));
-		this.livros.add(new Livro("Start Small, Stay Small",
-		"Rob Walling"));
-		this.livros.add(new Livro("Trabalhe 4 Horas Por Semana",
-		"Timothy Ferris"));
-		this.livros.add(new Livro("Getting Real", "Jason Fried"));
-		this.livros.add(new Livro("Rework", "Jason Fried"));
+		this.novoLivro = new Livro();
 	}
-	
-	public  List<Livro> getLivros(){
+
+	public void adicionar() {
+		this.livros.add(this.novoLivro);
+		this.novoLivro = new Livro();
+	}
+
+	public List<Livro> getLivros() {
 		return livros;
 	}
-	
-	public void setlivros(List<Livro> livros) {
+
+	public void setLivros(List<Livro> livros) {
 		this.livros = livros;
+	}
+
+	public Livro getNovoLivro() {
+		return novoLivro;
 	}
 }

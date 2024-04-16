@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 @Entity
-@Table (name = "Lacamento")
+@Table (name = "Lancamento")
 public class Lancamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -38,7 +38,7 @@ public class Lancamento implements Serializable {
 		this.id = id;
 	}
 	@ManyToOne (optional = false)
-	@JoinColumn (name = "pessoa-id")
+	@JoinColumn (name = "pessoa_id")
 	public Pessoa getPessoa() {
 		return pessoa;
 	}

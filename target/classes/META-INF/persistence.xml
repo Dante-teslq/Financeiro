@@ -10,16 +10,16 @@
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost/financeiro" />
+				value="jdbc:postgresql://localhost/dbfinancas" />
 			<property name="javax.persistence.jdbc.user" 
-				value="usuario" />
+				value="postgres" />
 			<property name="javax.persistence.jdbc.password"
-				value="senha" />
+				value="postgres" />
 			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.jdbc.Driver" />
+				value="org.postgresql.Driver" />
 			
 			<property name="hibernate.dialect"
-				value="org.hibernate.dialect.MySQL5Dialect" />
+				value="org.hibernate.dialect.PostgreSQLDialect"/>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

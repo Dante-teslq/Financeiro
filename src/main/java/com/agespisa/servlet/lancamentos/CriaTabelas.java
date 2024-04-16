@@ -1,4 +1,4 @@
-package com.agespisa.servlet;
+package com.agespisa.servlet.lancamentos;
 import javax.persistence.Persistence;
 
 public class CriaTabelas {

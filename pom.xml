@@ -29,14 +29,14 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.8.Final</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -45,17 +45,16 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		</dependency>
 
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.34</version>
-			<scope>compile</scope>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.7.3</version>
 		</dependency>
-		
+
 		<dependency>
-		<groupId>org.glassfish</groupId>
-		<artifactId>javax.faces</artifactId>
-		<version>2.2.10</version>
-		<scope>compile</scope>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>2.2.10</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 </project>

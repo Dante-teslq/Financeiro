@@ -6,7 +6,6 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import com.agespisa.servlet.model.Lancamento;
 
@@ -18,8 +17,8 @@ public class ConsultaLancamentosBean implements Serializable {
 
 	public void consultar() {
 		EntityManager manager = JpaUtil.getEntityManager();
-		TypedQuery<Lancamento> query = manager.createQuery("from Lancamento", Lancamento.class);
-		this.lancamentos = query.getResultList();
+		Lancamentos lancamentos = new Lancamentos(manager);
+		this.lancamentos = lancamentos.todos();
 		manager.close();
 	}
 

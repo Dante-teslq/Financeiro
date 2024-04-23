@@ -10,6 +10,10 @@ import com.agespisa.servlet.model.Lancamento;
 
 public class Lancamentos implements Serializable {
 
+	public void adicionar(Lancamento lancamento) {
+		this.manager.persist(lancamento);
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	private EntityManager manager;

@@ -3,6 +3,8 @@ package com.agespisa.servlet.service;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.inject.Inject;
+
 import com.agespisa.servlet.lancamentos.Lancamentos;
 import com.agespisa.servlet.model.Lancamento;
 
@@ -11,6 +13,7 @@ public class CadastroLancamentos implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Inject
 	private Lancamentos lancamentos;
 	
 	public CadastroLancamentos(Lancamentos lancamentos) {

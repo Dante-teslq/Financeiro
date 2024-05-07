@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 import com.agespisa.servlet.lancamentos.Lancamentos;
 import com.agespisa.servlet.model.Lancamento;
@@ -19,7 +20,7 @@ public class CadastroLancamentos implements Serializable{
 	public CadastroLancamentos(Lancamentos lancamentos) {
 		this.lancamentos = lancamentos;
 	}
-	
+	@Transactional
 	public void salvar(Lancamento lancamento) throws NegocioException{
 		if (lancamento.getDataPagamento() != null &&
 				lancamento.getDataPagamento().after(new Date())) {

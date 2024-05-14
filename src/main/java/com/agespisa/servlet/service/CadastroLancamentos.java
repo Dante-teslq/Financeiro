@@ -6,8 +6,8 @@ import java.util.Date;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
-import com.agespisa.servlet.lancamentos.Lancamentos;
 import com.agespisa.servlet.model.Lancamento;
+import com.agespisa.servlet.repository.Lancamentos;
 
 
 public class CadastroLancamentos implements Serializable{

@@ -6,10 +6,10 @@ import java.util.Calendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import com.agespisa.servlet.lancamentos.JpaUtil;
 import com.agespisa.servlet.model.Lancamento;
 import com.agespisa.servlet.model.Pessoa;
 import com.agespisa.servlet.model.TipoLancamento;
+import com.agespisa.servlet.util.JpaUtil;
 
 public class CriaLancamentos {
 	

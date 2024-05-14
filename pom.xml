@@ -4,12 +4,13 @@
 		http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.algaworks</groupId>
+	<groupId>com.agespisa</groupId>
 	<artifactId>Financeiro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<hibernate.version>5.3.1.Final</hibernate.version>
 	</properties>
 	<build>
 		<plugins>
@@ -34,14 +35,14 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.3.8.Final</version>
+			<version>${hibernate.version}</version>
 			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.8.Final</version>
+			<version>${hibernate.version}</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -61,17 +62,24 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.1.3.Final</version>
+			<version>${hibernate.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
 
+		<!-- Weld (implementação do CDI) -->
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
 			<version>2.2.9.Final</version>
 			<scope>compile</scope>
 		</dependency>
-
+		<!-- Weld depende do Jandex -->
 		<dependency>
 			<groupId>org.jboss</groupId>
 			<artifactId>jandex</artifactId>
